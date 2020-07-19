@@ -15,7 +15,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Nuxtchan',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -50,7 +50,17 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+      '@nuxtjs/axios',
+      '@nuxtjs/proxy'
   ],
+    proxy: {
+        '/api': {
+            target: 'http://2ch.hk',
+            pathRewrite: {
+                '^/api' : '/'
+            }
+        }
+    },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
