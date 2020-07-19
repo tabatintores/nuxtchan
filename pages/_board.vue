@@ -2,38 +2,31 @@
     <div>
         <h1>{{board.BoardName}}</h1>
         <h3 v-html="board.BoardInfo"></h3>
+        <div v-for="thread of board.threads">
+            <a v-for="file of thread.files" :href="`https://2ch.hk${file.path}`" target="_blank">
+                <img :src="`https://2ch.hk${file.thumbnail}`" alt="">
+            </a>
+            <div v-html="thread.comment"/>
+            <div style="width: 100%; height: 3px; background: #555; margin: 25px 0; display: flex;"></div>
+        </div>
+
+
     </div>
 </template>
 
 <script>
     export default {
-        asyncData() {
-            return {
-                board: {},
-                allBoards: []
+        async fetch({params, store}) {
+            await store.dispatch('board/getData', params.board)
+        },
+        async validate({params, store}) {
+            await store.dispatch('boards/fetch');
+            return store.getters[`boards/boardsIds`].includes(params.board);
+        },
+        computed: {
+            board() {
+                return this.$store.getters['board/boardData'];
             }
-        },
-        methods: {
-            checkIfValid(board) {
-                return this.allBoards.includes(board);
-            }
-        },
-        async created() {
-            const req = await this.$axios.get(`https://2ch.hk/${this.$route.params.board}/catalog.json`);
-            this.board = req.data;
-
-            let kek = await this.$axios.get(`https://2ch.hk/makaba/mobile.fcgi?task=get_boards`);
-
-
-            const allBoards = Object.values(kek.data).reduce((acc,cur )=> {
-                cur.map(item => {
-                    acc.push(item.id);
-                })
-                return acc;
-            }, [])
-        },
-        validate({params}) {
-            return true;
         },
     }
 </script>
