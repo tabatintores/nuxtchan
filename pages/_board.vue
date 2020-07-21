@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>{{board.BoardName}}</h1>
+    <div class="board">
+        <h2 class="h2">{{board.BoardName}}</h2>
         <h3 v-html="board.BoardInfo"></h3>
         <div v-for="thread of board.threads" :key="thread.num">
             <a class="image" v-for="file of thread.files" :href="`https://2ch.hk${file.path}`" target="_blank">
@@ -40,6 +40,12 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "@/assets/scss/style";
+    .board {
+        max-width: 100%-$sidebar-width;
+        padding: 30px 15px;
+        margin-left: $sidebar-width;
+    }
     .image {
         &:nth-child(n+2) {
             margin-left: 10px;

@@ -1,0 +1,30 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin: 0;
+}
+.h2 {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+}
+.h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+}

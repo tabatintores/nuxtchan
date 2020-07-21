@@ -1,20 +1,23 @@
 <template>
-    <div>
-        <Navbar></Navbar>
-        <main>
-            <Nuxt/>
-        </main>
-    </div>
+    <main class="app">
+        <Sidebar />
+        <Nuxt/>
+    </main>
 </template>
 <script>
-    import Navbar from "../components/Navbar";
+    import Sidebar from "@/components/Sidebar";
 
     export default {
         components: {
-            Navbar
+            Sidebar
         }
     }
 </script>
-<style>
-
+<style lang="scss">
+    @import "@/assets/scss/style";
+    .app {
+        display: flex;
+        /*width: 100%;
+        position: relative;*/
+    }
 </style>
