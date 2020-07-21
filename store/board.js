@@ -1,10 +1,13 @@
 export const state = () => ({
-    boardData: {}
+    boardsList: []
 })
 
 export const mutations = {
     setBoardData(state, board) {
-        state.boardData = board;
+        state.boardsList.push(board);
+    },
+    updateBoard() {
+
     }
 }
 
@@ -16,5 +19,5 @@ export const actions = {
 }
 
 export const getters = {
-    boardData: state => state.boardData,
+    boardData: state => boardName => state.boardsList.find(board => board.Board === boardName),
 }
