@@ -10,6 +10,10 @@
     export default {
         components: {
             Sidebar
+        },
+        async fetch({params, store, error}) {
+            if (!store.getters[`boards/boardsIds`].length)
+                await store.dispatch(`boards/fetch`);
         }
     }
 </script>
@@ -18,6 +22,8 @@
     .app {
         display: flex;
         background-color: #EEEEEE;
+        min-height: 100vh;
+        width: 100%;
         /*width: 100%;
         position: relative;*/
     }

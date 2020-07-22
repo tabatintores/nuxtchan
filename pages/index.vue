@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="board">
       <h1>Nuxtchan</h1>
   </div>
 </template>

@@ -35,7 +35,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import "@/assets/scss/style";
     .board {
         max-width: 100%-$sidebar-width;

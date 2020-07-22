@@ -22,10 +22,20 @@
 <script>
     export default {
         name: "Sidebar",
+        async fetch({params, store, error}) {
+            if (!store.getters[`boards/boardsIds`].length) {
+                console.log('No boards!')
+                await store.dispatch(`boards/fetch`);
+            }
+            console.log(store.getters['boards/boardsList'])
+        },
         computed: {
             boardsList() {
                 return this.$store.getters['boards/boardsList']
             }
+        },
+        async created() {
+            await this.$store.dispatch(`boards/fetch`);
         },
         mounted() {
             Object.entries(this.boardsList).forEach((key, value) => {
