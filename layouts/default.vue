@@ -17,6 +17,7 @@
     @import "@/assets/scss/style";
     .app {
         display: flex;
+        background-color: #EEEEEE;
         /*width: 100%;
         position: relative;*/
     }

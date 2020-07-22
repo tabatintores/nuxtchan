@@ -43,7 +43,7 @@
         width: $sidebar-width;
         top: 0;
         left: 0;
-        border-right: 1px solid rgba(0,0,0,.1);
+        border-right: 1px solid rgba(0,0,0,0.11);
         padding: 10px;
         overflow-x: hidden;
         &__category {
