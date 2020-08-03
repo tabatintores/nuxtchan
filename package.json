@@ -7,7 +7,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "export": "nuxt export",
-    "serve": "nuxt serve"
+    "serve": "nuxt serve",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@growthbunker/vuedarkmode": "^0.5.56",
@@ -16,6 +17,7 @@
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.2"
   }

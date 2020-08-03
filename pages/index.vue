@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-      <h1>Nuxtchan</h1>
+<!--      <h1>2ch NuxtJS</h1>-->
   </div>
 </template>
 
