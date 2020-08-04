@@ -38,9 +38,9 @@
             await this.$store.dispatch(`boards/fetch`);
         },
         mounted() {
-            Object.entries(this.boardsList).forEach((key, value) => {
+            /*Object.entries(this.boardsList).forEach((key, value) => {
                 console.log(key[1])
-            })
+            })*/
         }
     }
 </script>

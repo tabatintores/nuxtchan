@@ -34,6 +34,7 @@
         background-color: #FAFAFA;
         display: flex;
         flex-direction: column;
+        height: 20%;
         .thread-preview__content {
             margin-top: 20px;
         }
