@@ -60,6 +60,7 @@
         }
         &__gallery {
             display: flex;
+            flex-wrap: wrap;
         }
     }
 </style>

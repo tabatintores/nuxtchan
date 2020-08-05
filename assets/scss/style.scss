@@ -38,6 +38,8 @@ ul {
     max-width: 100%-$sidebar-width;
     padding: 30px 15px;
     margin-left: $sidebar-width;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
 
     &--error {
         display: flex;
@@ -45,4 +47,24 @@ ul {
         align-items: center;
         width: 100%;
     }
+}
+
+span.s {
+    text-decoration: line-through;
+}
+
+span.u {
+    text-decoration: underline;
+}
+
+span.o {
+    text-decoration: overline;
+}
+
+span.spoiler {
+    background-color: $spoiler-color;
+}
+
+span.unkfunc {
+    color: $quote-color;
 }

@@ -2,7 +2,7 @@
     <div class="content board">
         <h2 class="h2">{{board.BoardName}}</h2>
         <h3 v-html="board.BoardInfo"></h3>
-        <thread-preview v-for="thread of board.threads.slice(0,10)" :thread="thread" :key="thread.num"></thread-preview>
+        <thread-preview v-for="thread of board.threads.slice(0)" :thread="thread" :key="thread.num"></thread-preview>
     </div>
 </template>
 
