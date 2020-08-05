@@ -1,10 +1,8 @@
 <template>
-    <div class="board">
+    <div class="content board">
         <h2 class="h2">{{board.BoardName}}</h2>
         <h3 v-html="board.BoardInfo"></h3>
-        <thread-preview v-for="thread of board.threads.slice(0,10)" :thread="thread" :key="thread.num">
-            <div style="width: 100%; height: 3px; background: #555; margin: 25px 0; display: flex;"></div>
-        </thread-preview>
+        <thread-preview v-for="thread of board.threads.slice(0,10)" :thread="thread" :key="thread.num"></thread-preview>
     </div>
 </template>
 
@@ -32,14 +30,14 @@
                 return this.$store.getters['board/boardData'](this.$route.params.board);
             },
         },
+        methods: {
+            updateBoardData() {
+
+            }
+        }
     }
 </script>
 
 <style lang="scss">
     @import "@/assets/scss/style";
-    .board {
-        max-width: 100%-$sidebar-width;
-        padding: 30px 15px;
-        margin-left: $sidebar-width;
-    }
 </style>

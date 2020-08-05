@@ -4,27 +4,45 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
 body {
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
 }
+
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .h1 {
     font-size: 48px;
     font-weight: 500;
     margin: 0;
 }
+
 .h2 {
     font-size: 36px;
     font-weight: 500;
     margin: 0;
 }
+
 .h3 {
     font-size: 24px;
     font-weight: 500;
     margin: 0;
+}
+
+.content {
+    max-width: 100%-$sidebar-width;
+    padding: 30px 15px;
+    margin-left: $sidebar-width;
+
+    &--error {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }
