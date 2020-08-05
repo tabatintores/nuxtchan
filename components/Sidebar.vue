@@ -48,10 +48,10 @@
         },
         methods: {
             updateBoard() {
-                clearTimeout(this.timer)
+                clearTimeout(this.timer);
                 this.timer = setTimeout(async () => {
                     await this.$store.dispatch('board/updateData', this.$route.params.board);
-                }, 500)
+                }, 500);
             }
         },
         mounted() {
@@ -73,6 +73,7 @@
         border-right: 1px solid rgba(0,0,0,0.11);
         padding: 10px;
         overflow-x: hidden;
+        user-select: none;
         &__controls {
             padding-bottom: 10px;
             &-update {
