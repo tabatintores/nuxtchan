@@ -51,7 +51,6 @@
                 clearTimeout(this.timer)
                 this.timer = setTimeout(async () => {
                     await this.$store.dispatch('board/updateData', this.$route.params.board);
-                    console.log('Список тредов обновлён!');
                 }, 500)
             }
         },
