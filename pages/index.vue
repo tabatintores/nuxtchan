@@ -1,6 +1,6 @@
 <template>
-  <div class="board">
-<!--      <h1>2ch NuxtJS</h1>-->
+  <div class="content">
+      <h1>Nuxtchan by tabatintores</h1>
   </div>
 </template>
 
@@ -9,6 +9,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>
