@@ -58,11 +58,8 @@ export default {
       '@nuxtjs/proxy'
   ],
     proxy: {
-        '/api': {
+        '/res': {
             target: 'http://2ch.hk',
-            pathRewrite: {
-                '^/api' : '/'
-            }
         }
     },
   /*

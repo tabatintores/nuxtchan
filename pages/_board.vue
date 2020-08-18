@@ -1,5 +1,5 @@
 <template>
-    <div class="content board">
+    <div class="content board" :id="`board_${board.Board}`">
         <h2 class="h2">{{board.BoardName}}</h2>
         <h3 v-html="board.BoardInfo"></h3>
         <thread-preview v-for="thread of board.threads.slice(0)" :thread="thread" :key="thread.num"></thread-preview>
