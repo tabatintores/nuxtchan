@@ -40,7 +40,6 @@ ul {
     max-width: 100%-$sidebar-width;
     padding: 30px 15px;
     margin-left: $sidebar-width;
-    font-size: 1.125rem;
     line-height: 1.5rem;
 
     &--centered {
@@ -49,6 +48,14 @@ ul {
         align-items: center;
         width: 100%;
     }
+}
+
+.link {
+    @include link();
+}
+
+a {
+    @include link();
 }
 
 span.s {

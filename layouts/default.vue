@@ -21,7 +21,7 @@
     @import "@/assets/scss/style";
     .app {
         display: flex;
-        background-color: #FFF;
+        background-color: #EEE;
         min-height: 100vh;
         width: 100%;
         /*width: 100%;
