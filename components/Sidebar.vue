@@ -70,6 +70,7 @@
         position: fixed;
         height: 100%;
         width: $sidebar-width;
+        /*background-color: #FAFAFA;*/
         top: 0;
         left: 0;
         border-right: 1px solid rgba(0,0,0,0.11);
@@ -110,6 +111,7 @@
                 padding: 5px;
                 width: 100%;
                 background: rgba(222, 219, 219, 0.97);
+                color: #000;
             }
             &:nth-child(n+2) {
                 margin-top: 10px;
