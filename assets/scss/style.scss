@@ -1,4 +1,6 @@
 @import "variables";
+@import "icons";
+@import "mixins";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 
 *, *::before, *::after {
@@ -41,7 +43,7 @@ ul {
     font-size: 1.125rem;
     line-height: 1.5rem;
 
-    &--error {
+    &--centered {
         display: flex;
         justify-content: center;
         align-items: center;
