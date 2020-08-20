@@ -1,7 +1,7 @@
 <template>
   <div class="content main-page">
-      <img class="main-page__img" src="@/assets/img/tyan.jpg" alt="">
-      <h1>Nuxtchan by tabatintores</h1>
+      <img class="main-page__img" src="@/assets/img/tyan.png" alt="">
+      <h1 class="h1 main-page__title">Nuxtchan</h1>
   </div>
 </template>
 
@@ -20,6 +20,9 @@ export default {
         &__img {
             max-width: 50%;
             width: 100%;
+        }
+        &__title {
+            margin-top: 20px;
         }
     }
 </style>
