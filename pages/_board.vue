@@ -2,7 +2,13 @@
     <div class="content board" :id="`board_${board.Board}`">
         <h2 class="h2">{{board.BoardName}}</h2>
         <h3 v-html="board.BoardInfo"></h3>
-        <thread-preview v-for="thread of board.threads.slice(0)" :thread="thread" :key="thread.num"></thread-preview>
+        <thread-preview v-for="thread of board.threads.slice(0, offset)" :thread="thread" :key="thread.num" :id="thread.num"/>
+        <infinite-loading
+            spinner="spiral"
+            @infinite="infiniteScroll"
+        >
+            <div slot="no-more"></div>
+        </infinite-loading>
     </div>
 </template>
 
@@ -25,14 +31,26 @@
         async validate({params}) {
             return /^[a-z]+$/.test(params.board);
         },
+        data() {
+            return {
+                offset: 10
+            }
+        },
         computed: {
             board() {
                 return this.$store.getters['board/boardData'](this.$route.params.board);
             },
         },
         methods: {
-            updateBoardData() {
-
+            infiniteScroll($state) {
+                if (this.offset < this.board.threads.length) {
+                    setTimeout(() => {
+                        this.offset += 10;
+                        $state.loaded();
+                    }, 500)
+                } else {
+                    $state.complete();
+                }
             }
         }
     }
