@@ -75,6 +75,9 @@
                 }
             }
         }
+        &__content {
+            word-break: break-word;
+        }
         &__info {
             display: flex;
             align-items: baseline;

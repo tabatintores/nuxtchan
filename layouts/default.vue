@@ -24,6 +24,7 @@
         background-color: #EEE;
         min-height: 100vh;
         width: 100%;
+        /*overflow-x: hidden;*/
         /*width: 100%;
         position: relative;*/
     }
