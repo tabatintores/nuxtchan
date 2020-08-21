@@ -21,9 +21,9 @@
             <div class="thread-preview__data">
                 <nuxt-link to="" class="thread-preview__subject" v-if="thread.subject">{{thread.subject}}</nuxt-link>
                 <div class="thread-preview__content">
-                    <div>
-                        <div v-html="content"></div>
-                        <span v-if="needExpand" @click="isPostExpanded = true" class="link">Показать текст полностью</span>
+                    <div class="thread-preview__expand">
+                        <div class="thread-preview__text" v-html="content"></div>
+                        <span v-if="needExpand" @click="isPostExpanded = true" class="link thread-preview__expand-btn">Показать текст полностью</span>
                     </div>
                 </div>
             </div>
