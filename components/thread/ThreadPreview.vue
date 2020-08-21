@@ -15,7 +15,12 @@
                     :href="`https://2ch.hk${file.path}`"
                     target="_blank"
                 >
-                    <img :src="`https://2ch.hk${file.thumbnail}`" alt="">
+                    <lazy-img
+                        :lazySrc="`https://2ch.hk${file.thumbnail}`"
+                        :height="file.tn_height"
+                        :width="file.tn_width"
+                        ref="im"
+                        alt=""/>
                 </a>
             </div>
             <div class="thread-preview__data">
@@ -33,8 +38,12 @@
 </template>
 
 <script>
+    import LazyImg from "../LazyImg";
     export default {
         name: "ThreadPreview",
+        components: {
+            LazyImg
+        },
         data() {
             return {
                 isPostExpanded: this.thread.comment.length < 500,

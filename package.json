@@ -13,6 +13,8 @@
   "dependencies": {
     "@growthbunker/vuedarkmode": "^0.5.56",
     "@nuxtjs/axios": "^5.12.0",
+    "color-thief": "^2.2.5",
+    "colorthief": "^2.3.2",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.13.0",
     "vue-infinite-loading": "^2.4.5"

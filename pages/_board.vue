@@ -52,7 +52,7 @@
                     $state.complete();
                 }
             }
-        }
+        },
     }
 </script>
 
