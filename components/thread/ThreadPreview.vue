@@ -21,7 +21,10 @@
             <div class="thread-preview__data">
                 <nuxt-link to="" class="thread-preview__subject" v-if="thread.subject">{{thread.subject}}</nuxt-link>
                 <div class="thread-preview__content">
-                    <div v-html="thread.comment"></div>
+                    <div>
+                        <div v-html="content"></div>
+                        <span v-if="needExpand" @click="isPostExpanded = true" class="link">Показать текст полностью</span>
+                    </div>
                 </div>
             </div>
             <!--        <a target="_blank" :href="`https://2ch.hk/${board.Board}/res/${thread.num}.html`">В тред</a>-->
@@ -32,6 +35,20 @@
 <script>
     export default {
         name: "ThreadPreview",
+        data() {
+            return {
+                isPostExpanded: this.thread.comment.length < 500,
+                limit: 500
+            }
+        },
+        computed: {
+            needExpand() {
+                return this.thread.comment.length > this.limit && !this.isPostExpanded;
+            },
+            content() {
+                return !this.isPostExpanded ? this.thread.comment.slice(0,this.limit)+'...' : this.thread.comment
+            }
+        },
         props: {
             thread: {
                 type: Object,
